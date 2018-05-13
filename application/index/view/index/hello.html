@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>hello {$name}</title>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link>
+<script>
+  $(function(){
+    $('#upload').on('click', function(){
+      var formData = new FormData();
+      formData.append('description', 'test');
+      formData.append('file', $('#file')[0].files[0]);
+      $.ajax({
+        url : "{:url('index')}",
+        method: 'POST',
+        data : formData,
+        processData: false,
+        contentType: false,
+        success: function(res) {
+          alert(res);
+        },
+        error: function(err) {
+          console.log(err);
+        }
+      })
+    })
+
+    $('#spin').on('click', function() {
+      $('#Model__RotationTimer').attr('enabled', 'true');
+      // $('#Model__Group001-TIMER').attr('loop', 'true');
+    })
+
+    $('#stop').on('click', function() {
+      $('#Model__RotationTimer').attr('enabled', 'false');
+      // $('#Model__Group001-TIMER').attr('loop', 'false');
+    })
+
+    $('#light').on('click', function() {
+      $('#Model__Omni001').attr('on', 'false');
+      // $('#Model__Group001-TIMER').attr('loop', 'false');
+    })
+  })
+</script>
+</head>
+<body>
+    <input type="file" id='file'/>
+    <input type="button" value="submit" id="upload" />
+
+
+    <x3d width='500px' height='400px'>
+      <scene>
+  	    <inline nameSpaceName="Model" mapDEFToID="true" url="/tp5/public/model/model0.x3d"> </inline>
+      </scene>
+    </x3d>
+    <input type="button" value="spin" id="spin" />
+    <input type="button" value="stop" id="stop" />
+    <input type="button" value="light" id="light" />
+
+</body>
+</html>

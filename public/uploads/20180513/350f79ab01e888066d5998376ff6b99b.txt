@@ -1,0 +1,29 @@
+Evaluation
+1.Data Visiualization for student attendance -- pie chart
+2.Data Visiualization for student attendance -- line chart
+3.Data Visiualization for student attendance -- bar chart
+4.Student list -- Table
+5.Replied Email log -- List
+6.Upload student attendance in excel file
+7.Upload student attendance in csv file
+8.Login function
+9.Log out function
+10.Assign role to user
+11.Add role
+12.Delete role
+13.Assign permission to role
+14.Add permission
+15.Delete permission
+16.Modify email no replay time interval
+17.Modify email templete based on different level
+18.Modify attendance check time frame
+19.Modify reminder thresholds
+20.Mark student as different falg (Blue and Red)
+21.Add note to a specific student
+
+Future works:
+1.Manually change student attendance on UI
+2.More different chart to show student attendance
+3.Comment panel for chatting between student and supervisor
+4.Change email address for auto email sending
+add more...
