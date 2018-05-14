@@ -11,7 +11,7 @@
       formData.append('description', 'test');
       formData.append('file', $('#file')[0].files[0]);
       $.ajax({
-        url : "{:url('index')}",
+        url : "{:url('create')}",
         method: 'POST',
         data : formData,
         processData: false,
@@ -26,17 +26,21 @@
     })
 
     $('#spin').on('click', function() {
-      $('#Model__RotationTimer').attr('enabled', 'true');
+      $('#Model__vase-2-TIMER').attr('enabled', 'true');
       // $('#Model__Group001-TIMER').attr('loop', 'true');
     })
 
     $('#stop').on('click', function() {
-      $('#Model__RotationTimer').attr('enabled', 'false');
+      $('#Model__vase-2-TIMER').attr('enabled', 'false');
       // $('#Model__Group001-TIMER').attr('loop', 'false');
     })
 
     $('#light').on('click', function() {
-      $('#Model__Omni001').attr('on', 'false');
+      $('#Model__Omni001-35').attr('on', 'false');
+      $('#Model__Omni002-38').attr('on', 'false');
+      $('#Model__Omni004-39').attr('on', 'false');
+      $('#Model__Omni003-40').attr('on', 'false');
+      $('#Model__Omni005-55').attr('on', 'false');
       // $('#Model__Group001-TIMER').attr('loop', 'false');
     })
   })
@@ -49,7 +53,7 @@
 
     <x3d width='500px' height='400px'>
       <scene>
-  	    <inline nameSpaceName="Model" mapDEFToID="true" url="/tp5/public/model/model0.x3d"> </inline>
+  	    <inline nameSpaceName="Model" mapDEFToID="true" url="/tp5/public/model/vase1.x3d"> </inline>
       </scene>
     </x3d>
     <input type="button" value="spin" id="spin" />
