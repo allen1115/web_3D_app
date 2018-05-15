@@ -23,7 +23,7 @@ return [
     // 端口
     'hostport'        => '',
     // 连接dsn
-    'dsn'             => 'sqlite:E:\wamp\www\tp5\application\db/test.db',
+    'dsn'             => 'sqlite:'.ROOT_PATH.'application/db/test.db',
     // 数据库连接参数
     'params'          => [],
     // 数据库编码默认采用utf8

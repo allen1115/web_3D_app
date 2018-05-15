@@ -9,6 +9,11 @@ use app\index\model\Museum;
 
 class Index extends Controller
 {
+
+    public function index()
+    {
+        return $this->fetch();
+    }
     /**
      * Create new object
      * @param Request $request
