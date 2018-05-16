@@ -9,6 +9,11 @@ use app\index\model\Museum;
 
 class Index extends Controller
 {
+
+    public function index()
+    {
+        return $this->fetch();
+    }
     /**
      * Create new object
      * @param Request $request
@@ -20,15 +25,15 @@ class Index extends Controller
         $img = $request->file('img');
         $video = $request->file('video');
         $des = $request->post('description');
-        if (empty($file) || empty($img) || empty($video)) {
+        if (empty($x3d) || empty($img) || empty($video)) {
             return 'Please upload x3d or image or video';
         }
         $info1 = $x3d->move(ROOT_PATH . 'public' . DS . 'uploads');
-        $x3d_path = $info1->getRealPath();
+        $x3d_path = 'public/uploads/'.str_replace('\\', '/', $info1->getSaveName());
         $info2 = $img->move(ROOT_PATH . 'public' . DS . 'uploads');
-        $img_path = $info2->getRealPath();
+        $img_path = 'public/uploads/'.str_replace('\\', '/', $info2->getSaveName());
         $info3 = $video->move(ROOT_PATH . 'public' . DS . 'uploads');
-        $video_path = $info3->getRealPath();
+        $video_path = 'public/uploads/'.str_replace('\\', '/', $info3->getSaveName());
 
         $museum = new Museum;
         $museum->x3d = $x3d_path;
